@@ -57,13 +57,13 @@ export default function Inner({ children }) {
     <div>
       <motion.div
         {...anim(slideUp)}
-        className="fixed top-0 left-0 bg-[#1f1f1f] w-screen h-screen"
+        className="fixed top-0 left-0 z-10 bg-[#1f1f1f] w-screen h-screen"
       ></motion.div>
       <motion.div
         {...anim(slideDown)}
         className="fixed top-0 left-0 z-10 bg-[#1f1f1f] w-screen h-screen"
       ></motion.div>
-      <motion.div {...anim(opacity)} className="flex justify-center">
+      <motion.div {...anim(opacity)} className="flex flex-col items-center">
         {children}
       </motion.div>
     </div>

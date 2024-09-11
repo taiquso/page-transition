@@ -1,40 +1,38 @@
 import Inner from "@/components/Layout/Inner";
 import { motion } from "framer-motion";
+import StaggerLetters from "@/components/StaggerLetters";
+import AnimatedParagraph from "@/components/AnimatedParagraph";
 
 export default function Home() {
   return (
     <Inner>
-      <motion.div className="inline-flex overflow-hidden">
-        <Letters>Web Animation Course</Letters>
-      </motion.div>
+      <StaggerLetters>Web Animation Course</StaggerLetters>
+      <div className="grid grid-cols-3">
+        <div className="p-8">
+          <AnimatedParagraph>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+          </AnimatedParagraph>
+        </div>
+        <div className="p-8">
+          <AnimatedParagraph>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+          </AnimatedParagraph>
+        </div>
+        <div className="p-8">
+          <AnimatedParagraph>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+          </AnimatedParagraph>
+        </div>
+      </div>
     </Inner>
   );
 }
-
-const Letters = ({ children }) => {
-  return (
-    <motion.div className="text-7xl font-bold pt-8">
-      {children.split("").map((char, i) => {
-        return (
-          <motion.span
-            className="inline-block bg-gradient-to-b from-black to-white bg-clip-text text-transparent"
-            initial={{ y: "100%" }}
-            animate={{
-              y: 0,
-              transition: {
-                delay: 0.5 + i * 0.045,
-                ease: "easeInOut",
-                type: "spring",
-                damping: 70,
-                stiffness: 300,
-              },
-            }}
-            key={i}
-          >
-            {char}
-          </motion.span>
-        );
-      })}
-    </motion.div>
-  );
-};
