@@ -1,11 +1,11 @@
 import Inner from "@/components/Layout/Inner";
 import { motion } from "framer-motion";
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <Inner>
       <motion.div className="inline-flex overflow-hidden">
-        <Letters>Web Animation Course</Letters>
+        <Letters>ABOUT</Letters>
       </motion.div>
     </Inner>
   );
@@ -17,7 +17,7 @@ const Letters = ({ children }) => {
       {children.split("").map((char, i) => {
         return (
           <motion.span
-            className="inline-block bg-gradient-to-b from-black to-white bg-clip-text text-transparent"
+            className="inline-block"
             initial={{ y: "100%" }}
             animate={{
               y: 0,
